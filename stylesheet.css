@@ -19,6 +19,9 @@
 html { scroll-behavior: smooth; }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -49,56 +52,9 @@ body::before {
   z-index: 1;
 }
 
-/* ── Nav ─────────────────────────────────────────────────── */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(11, 11, 20, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 0;
-}
-
-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav .logo-photo {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid var(--border);
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-nav .logo-photo:hover {
-  border-color: var(--purple);
-  box-shadow: 0 0 12px rgba(191, 64, 255, 0.3);
-}
-
-nav .nav-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-}
-
-nav .nav-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-
-nav .nav-links a:hover {
-  color: var(--blue);
+body > .container {
+  flex: 1;
+  width: 100%;
 }
 
 /* ── Hero ────────────────────────────────────────────────── */
@@ -422,6 +378,4 @@ footer .gradient-line {
 
   .project-card .project-links { justify-content: center; }
 
-  nav .nav-links { gap: 16px; }
-  nav .nav-links a { font-size: 12px; }
 }
