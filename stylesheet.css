@@ -356,7 +356,7 @@ footer .gradient-line {
 @media (max-width: 680px) {
   .hero {
     flex-direction: column-reverse;
-    text-align: center;
+    text-align: left;
     gap: 32px;
     padding: 48px 0 40px;
   }
@@ -366,9 +366,20 @@ footer .gradient-line {
     height: 160px;
   }
 
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+  }
+
   h1 { font-size: 36px; }
 
-  .social-links { justify-content: center; }
+  .hero-text .social-links {
+    order: 1;
+    justify-content: flex-start;
+    margin: 0 0 24px;
+  }
+
+  .hero-text .bio { order: 2; }
 
   .project-card {
     flex-direction: column;
